@@ -4,6 +4,8 @@
  */
 package UIAdmin;
 
+import Utils.ShareHelper;
+
 /**
  *
  * @author dantr
@@ -15,6 +17,7 @@ public class BillJFrame extends javax.swing.JFrame {
      */
     public BillJFrame() {
         initComponents();
+	setIconImage(ShareHelper.APP_ICON);
     }
 
     /**

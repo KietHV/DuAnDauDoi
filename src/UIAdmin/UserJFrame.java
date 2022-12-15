@@ -8,6 +8,7 @@ import DAO.AccountDao;
 import Entity.Account;
 import Utils.Auth;
 import Utils.MsgBox;
+import Utils.ShareHelper;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -664,6 +665,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
     // set table
     public void initModel() {
+	    setIconImage(ShareHelper.APP_ICON);
         model = new DefaultTableModel(new Object[0][], (Object[]) new String[]{"Fullname", "Username", "Password", "Gender", "Birthday", "Phone", "Email", "Address", "Role"}) {
             boolean[] canEdit = new boolean[]{false, false, false, false, false, false, false, false, false, false};
 

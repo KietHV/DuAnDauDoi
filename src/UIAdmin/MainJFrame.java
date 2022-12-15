@@ -6,6 +6,7 @@ package UIAdmin;
 
 import Utils.Auth;
 import Utils.MsgBox;
+import Utils.ShareHelper;
 import java.awt.Color;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -24,16 +25,19 @@ public class MainJFrame extends javax.swing.JFrame {
 		init(true, true);
 	}
 
-	MainJFrame(JFrame aThis, boolean b) {
+	public MainJFrame(JFrame aThis, boolean b) {
 		initComponents();
 		initBack();
 	}
 
-	MainJFrame(boolean b) {
+	public MainJFrame(boolean b) {
 		initComponents();
 		initLogin();
 	}
-
+	public MainJFrame(JDialog aThis, boolean b) {
+		initComponents();
+		initLogin();
+	}
 	/**
 	 * This method is called from within the constructor to initialize the
 	 * form. WARNING: Do NOT modify this code. The content of this method is
@@ -307,6 +311,7 @@ public class MainJFrame extends javax.swing.JFrame {
         // End of variables declaration//GEN-END:variables
 
 	private void init(boolean a, boolean b) {
+
 		this.getContentPane().setBackground(Color.WHITE);
 		new ChaoJDialog(this, true).setVisible(a);
 		new DangNhapJDialog(this, true).setVisible(a);
@@ -315,6 +320,7 @@ public class MainJFrame extends javax.swing.JFrame {
 		if (!Auth.isAdmin()) {
 			btnUser.setEnabled(false);
 		}
+		setIconImage(ShareHelper.APP_ICON);
 
 	}
 
@@ -326,6 +332,8 @@ public class MainJFrame extends javax.swing.JFrame {
 		if (!Auth.isAdmin()) {
 			btnUser.setEnabled(false);
 		}
+		setIconImage(ShareHelper.APP_ICON);
+
 	}
 
 	private void initLogin() {
@@ -336,6 +344,8 @@ public class MainJFrame extends javax.swing.JFrame {
 		if (!Auth.isAdmin()) {
 			btnUser.setEnabled(false);
 		}
+		setIconImage(ShareHelper.APP_ICON);
+
 	}
 
 	private void openOrder() {
